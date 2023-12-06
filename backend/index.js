@@ -53,6 +53,21 @@ app.get("/books", async (request, response) => {
   }
 });
 
+// Route for Get one Book from database
+app.get("/books/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const book = await Book.findById(id); // Correct usage of findById
+    if (!book) {
+      return response.status(404).json({ message: "Book not found" });
+    }
+    return response.status(200).json(book);
+  } catch (error) {
+    console.error(error.message);
+    response.status(500).json({ message: error.message });
+  }
+});
+
 mongoose
   .connect(mongoDBURL)
   .then(() => {
