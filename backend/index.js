@@ -92,6 +92,21 @@ app.put("/books/:id", async (request, response) => {
   }
 });
 
+//Route for Delete a book
+app.delete("/books/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const result = await Book.findByIdAndDelete(id);
+    if (!result) {
+      return response.status(404).send({ message: "Book Not Found" });
+    }
+    return response.status(200).send({ message: "Deleted Successfully!" });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
 mongoose
   .connect(mongoDBURL)
   .then(() => {
