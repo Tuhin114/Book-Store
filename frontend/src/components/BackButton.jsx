@@ -18,4 +18,4 @@ BackButton.propTypes = {
     destination: PropTypes.string,
   };
 
-export default BackButton
+export default BackButton;
