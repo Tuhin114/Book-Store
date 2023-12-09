@@ -16,13 +16,13 @@ app.use(express.json());
 app.use(cors());
 
 //Option 2: Allow Custom Origins
-app.use(
-  cors({
-    origin: "http://localhost:3000", // add your domain here if you want
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // add your domain here if you want
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
 app.get("/", (req, res) => {
   console.log(req);
   return res.status(234).send("Welcome to MERN Stack Tutorial");
