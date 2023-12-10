@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { MdOutlineAddBox, MdDelete } from 'react-icons/md';
+import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import { BsInfoCircle } from 'react-icons/bs';
 import Spinner from '../components/spinner';
 import { AiOutlineEdit } from 'react-icons/ai';
@@ -62,7 +62,7 @@ const Home = () => {
                         <AiOutlineEdit className='text-2xl text-yellow-600' />
                       </Link>
                       <Link to={`/books/delete/${book._id}`}>
-                        <MdDelete className='text-2xl text-red-600' />
+                        <MdOutlineDelete className='text-2xl text-red-600' />
                       </Link>
                     </div>
                   </td>
